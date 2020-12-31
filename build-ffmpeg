@@ -3,6 +3,8 @@
 # HOMEPAGE: https://github.com/markus-perl/ffmpeg-build-script
 # LICENSE: https://github.com/markus-perl/ffmpeg-build-script/blob/master/LICENSE
 
+sudo apt install libva-dev vainfo
+
 PROGNAME=$(basename "$0")
 VERSION=1.21
 CWD=$(pwd)
