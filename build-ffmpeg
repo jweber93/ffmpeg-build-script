@@ -333,17 +333,6 @@ if build "yasm"; then
 	build_done "yasm"
 fi
 
-if build "speex"; then
-	download "http://downloads.us.xiph.org/releases/speex/speex-1.2.0.tar.gz"
-	execute ./configure --prefix="${WORKSPACE}"
-	execute make -j $MJOBS
-	execute make install
-	build_done "speex"
-      fi
-
-  CONFIGURE_OPTIONS+=("--enable-libspeex")
-fi
-
 if build "nasm"; then
 	download "https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/nasm-2.15.05.tar.xz"
 	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
@@ -476,6 +465,16 @@ CONFIGURE_OPTIONS+=("--enable-libaom")
 ##
 ## audio library
 ##
+
+if build "speex"; then
+	download "http://downloads.us.xiph.org/releases/speex/speex-1.2.0.tar.gz"
+	execute ./configure --prefix="${WORKSPACE}"
+	execute make -j $MJOBS
+	execute make install
+	build_done "speex"
+fi
+CONFIGURE_OPTIONS+=("--enable-libspeex")
+
 
 if build "opencore"; then
 	download "https://deac-riga.dl.sourceforge.net/project/opencore-amr/opencore-amr/opencore-amr-0.1.5.tar.gz"
