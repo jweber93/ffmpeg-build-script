@@ -339,6 +339,9 @@ if build "speex"; then
 	execute make -j $MJOBS
 	execute make install
 	build_done "speex"
+      fi
+
+  CONFIGURE_OPTIONS+=("--enable-libspeex")
 fi
 
 if build "nasm"; then
