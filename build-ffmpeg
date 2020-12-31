@@ -653,6 +653,9 @@ download "https://ffmpeg.org/releases/ffmpeg-4.3.1.tar.bz2"
 	--enable-small \
 	--enable-version3 \
 	--enable-demuxer=rtsp \
+	--enable-filters \
+	--enable-network \
+	--enable-protocol=tcp \
 	--extra-cflags="${CFLAGS}" \
 	--extra-ldexeflags="${LDEXEFLAGS}" \
 	--extra-ldflags="${LDFLAGS}" \
