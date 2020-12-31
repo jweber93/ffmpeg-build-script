@@ -639,6 +639,7 @@ download "https://ffmpeg.org/releases/ffmpeg-4.3.1.tar.bz2"
 	--enable-static \
 	--enable-small \
 	--enable-version3 \
+	--enable-libspeex \
 	--extra-cflags="${CFLAGS}" \
 	--extra-ldexeflags="${LDEXEFLAGS}" \
 	--extra-ldflags="${LDFLAGS}" \
