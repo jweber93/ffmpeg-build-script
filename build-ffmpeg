@@ -333,6 +333,14 @@ if build "yasm"; then
 	build_done "yasm"
 fi
 
+if build "speex"; then
+	download "http://downloads.us.xiph.org/releases/speex/speex-1.2.0.tar.gz"
+	execute ./configure --prefix="${WORKSPACE}"
+	execute make -j $MJOBS
+	execute make install
+	build_done "speex"
+fi
+
 if build "nasm"; then
 	download "https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/nasm-2.15.05.tar.xz"
 	execute ./configure --prefix="${WORKSPACE}" --disable-shared --enable-static
@@ -639,7 +647,6 @@ download "https://ffmpeg.org/releases/ffmpeg-4.3.1.tar.bz2"
 	--enable-static \
 	--enable-small \
 	--enable-version3 \
-	--enable-libspeex \
 	--extra-cflags="${CFLAGS}" \
 	--extra-ldexeflags="${LDEXEFLAGS}" \
 	--extra-ldflags="${LDFLAGS}" \
