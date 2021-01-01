@@ -657,6 +657,7 @@ download "https://ffmpeg.org/releases/ffmpeg-4.3.1.tar.bz2"
 	--enable-filters \
 	--enable-network \
 	--enable-protocol=tcp \
+	--enable-hwaccel=h264_vaapi \
 	--extra-cflags="${CFLAGS}" \
 	--extra-ldexeflags="${LDEXEFLAGS}" \
 	--extra-ldflags="${LDFLAGS}" \
